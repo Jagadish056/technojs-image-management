@@ -7,7 +7,7 @@ use Intervention\Image\Facades\Image;
 
 trait ImageUpload
 {
-    public function storeImage($file, $dir = '')
+    private function storeImage($file, $dir = '')
     {
         $filenameWithExt = $file->getClientOriginalName();
         $extension = $file->getClientOriginalExtension();
@@ -30,14 +30,20 @@ trait ImageUpload
         ];
     }
 
-    public function deleteImage($path)
+    private function deleteImage($path)
     {
         return Storage::exists($path) ? Storage::delete($path) : false;
     }
 
-    public function checkImage($file)
+    private function checkImage($file)
     {
         return in_array($file->extension(), ['jpeg', 'jpg', 'png', 'gif', 'bmp', 'webp'])
             && $file->getSize() < (1024 * 1024);
+    }
+
+    public function resize()
+    {
+        $url = url('storage/ENwV9Z1HV89sI48ect5k1645522125.jpg');
+        return $url;
     }
 }

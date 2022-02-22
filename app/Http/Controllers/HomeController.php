@@ -12,7 +12,7 @@ class HomeController extends Controller
     public function index()
     {
         $search = request()->input('for');
-        $check = request()->has('page') || request()->has('for');
+        $check = request()->has('page') || request()->has('for') || request()->has('sort_by');
         !$check ?: Cache::forget('images');
 
         $images = Cache::remember('images', $check ? 60 : 60 * 60 * 24 * 7, function () use ($search) {
@@ -39,5 +39,15 @@ class HomeController extends Controller
         $response .= '<br/>' . Artisan::output();
 
         return response(str_replace('!', '!<br/>', $response));
+    }
+
+    public function resize()
+    {
+        $url = url('storage/ENwV9Z1HV89sI48ect5k1645522125.jpg');
+        $img = Image::cache(function ($image) use ($url) {
+            $image->make($url)->resize(300, 200)->greyscale();
+        }, 10, true);
+
+        return $img;
     }
 }
