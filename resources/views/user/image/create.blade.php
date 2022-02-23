@@ -3,7 +3,7 @@
 @section('title', 'Upload Image')
 
 @section('content')
-    @if (count(Cache::get('images', [])) > 0)
+    @if (count(Cache::get('images', [])) > 7)
         <x-container-fluid class="hidden md:block mb-10">
             <x-card.default
                 class="mx-auto max-w-4xl px-8 py-3 bg-gradient-to-r from-slate-900 via-sky-600 to-slate-900 !rounded-full !overflow-hidden">
@@ -17,7 +17,7 @@
                             <a href="{{ url($img->path) }}" target="_blank">
                                 <div class="aspect-w-16 aspect-h-9">
                                     <img src="{{ url($img->path) }}" alt="{{ $img->name }}"
-                                        class=" object-scale-down bg-zinc-700 rounded-md">
+                                        class="text-sm object-scale-down bg-zinc-700 rounded-md">
                                 </div>
                             </a>
                             @if ($loop->last)

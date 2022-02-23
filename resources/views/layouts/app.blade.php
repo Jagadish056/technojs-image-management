@@ -5,11 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
     <title>@yield('title')</title>
+
+    <meta name="keywords" content="Image, Management, Image Management, Optimize, Image Optimization">
+    <meta name="author" content="technojs.com, jagadish sharma">
+    <meta name="robots" content="index, follow">
+
+    <link rel="canonical" href="{{ Request::url() }}">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet" />
-    {{-- <script defer src="{{ asset('vendor/alpinejs@3.9.0/cdn.min.js') }}"></script> --}}
 </head>
 
 <body @class([

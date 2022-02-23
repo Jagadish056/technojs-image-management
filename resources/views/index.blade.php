@@ -26,6 +26,7 @@
                             required />
                         <x-button.btn type="submit" class="my-auto px-3 !py-2 rounded-l-none">
                             <x-svg.solid.search class="w-5 h-5" />
+                            <span class="sr-only">Search</span>
                         </x-button.btn>
                     </form>
                 @endif
@@ -39,7 +40,7 @@
                     <div class="max-w-sm bg-white shadow-lg rounded-sm justify-self-center sm:justify-self-auto">
                         <div class="aspect-w-16 aspect-h-9">
                             <img src="{{ url($img->path) }}" alt="{{ $img->name }}"
-                                class="object-scale-down bg-zinc-900">
+                                class="object-scale-down bg-zinc-900" loading="lazy">
                         </div>
                         <div class="px-4 py-2 my-auto  group">
                             <x-link href="{{ url($img->path) }}" class="text-xs break-words ">
