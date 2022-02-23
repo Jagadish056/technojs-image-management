@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/technyls/public_html/image.technojs.com
+    - /bin/cp * $DEPLOYPATH
