@@ -7,7 +7,7 @@
         <x-container-fluid>
             <div class="mb-4 -mt-6 flex flex-wrap justify-between gap-4">
                 <div class="my-auto dropdown relative">
-                    <x-button.btn class="dropdown-toggle !p-0 text-inherit !bg-transparent !shadow-none flex ">
+                    <x-button.btn class="dropdown-toggle !p-0 !text-inherit !bg-transparent !shadow-none flex ">
                         <span> Sort by</span>
                         <x-svg.solid.arrow-triangle class="h-4 w-4 -rotate-90" />
                     </x-button.btn>

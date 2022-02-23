@@ -12,7 +12,7 @@
                 <span class="ml-1">Upload Image</span>
             </x-link>
         </x-slot>
-        <div class="overflow-x-auto">
+        <div class="-mt-3 overflow-x-auto">
             <table>
                 <thead class="table-header-group">
                     <tr class="table-row">

@@ -43,7 +43,18 @@ trait ImageUpload
 
     public function resize()
     {
-        $url = url('storage/ENwV9Z1HV89sI48ect5k1645522125.jpg');
-        return $url;
+        $width = 600;
+        $height = 500;
+        $file = url('storage/d4PBClbo48mwvmQT7WVK1645532191.webp');
+        switch (pathinfo($file)['extension']) {
+            case "png":
+                return imagepng(imagescale(imagecreatefrompng($file), $width, $height), $file);
+            case "gif":
+                return imagegif(imagescale(imagecreatefromgif($file), $width, $height), $file);
+            case "webp":
+                return imagewebp(imagescale(imagecreatefromwebp($file), $width, $height), $file);
+            default:
+                return imagejpeg(imagescale(imagecreatefromjpeg($file), $width, $height), $file);
+        }
     }
 }

@@ -16,7 +16,7 @@ class HomeController extends Controller
         !$check ?: Cache::forget('images');
 
         $images = Cache::remember('images', $check ? 60 : 60 * 60 * 24 * 7, function () use ($search) {
-            return Image::select(['name', 'path'])
+            return Image::select(['id', 'name', 'path'])
                 ->when($search, function ($query) use ($search) {
                     return $query->where('name', 'LIKE', "%{$search}%")
                         ->orWhere('path', 'LIKE', "%{$search}%");
